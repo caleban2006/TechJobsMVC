@@ -58,6 +58,5 @@ namespace TechJobsMVC.Controllers
 
             return View();
         }
-
     }
 }

@@ -13,6 +13,7 @@ namespace TechJobsMVC.Data
         static bool IsDataLoaded = false;
 
         static List<Job> AllJobs;
+        static private List<JobField> All = new List<JobField>();
         static private List<JobField> AllEmployers = new List<JobField>();
         static private List<JobField> AllLocations = new List<JobField>();
         static private List<JobField> AllPositionTypes = new List<JobField>();
@@ -241,6 +242,12 @@ namespace TechJobsMVC.Data
             return rowValues.ToArray();
         }
 
+        static public List<JobField> GetAll()
+        {
+            LoadData();
+            All.Sort(new NameSorter());
+            return All;
+        }
         static public List<JobField> GetAllEmployers()
         {
             LoadData();
